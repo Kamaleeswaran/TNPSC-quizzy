@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TNPSC QUIZZY | Master Your Exams</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="liquid-bg">
+        <div class="blob yellow"></div>
+        <div class="blob skyblue"></div>
+    </div>
+
+    <nav>
+        <h1 class="logo">TNPSC <span>QUIZZY</span></h1>
+        <button id="openUploadBtn" class="glow-btn">+ Upload Quiz</button>
+    </nav>
+
+    <main class="glass-card">
+        <div id="quizContainer">
+            <h2 id="question">Ready to test your knowledge?</h2>
+            <div class="options-grid">
+                <button class="opt">Start Quiz</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="uploadModal" class="modal">
+        <div class="modal-content glass-card">
+            <h3>Create a New Question</h3>
+            <input type="text" placeholder="Enter your TNPSC Question here..." id="qInput">
+            <div class="upload-options">
+                <input type="text" placeholder="Option A" class="opt-input">
+                <input type="text" placeholder="Option B" class="opt-input">
+                <input type="text" placeholder="Option C" class="opt-input">
+                <input type="text" placeholder="Option D" class="opt-input">
+            </div>
+            <button class="submit-btn">Publish Question</button>
+            <button onclick="closeModal()" class="close-btn">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

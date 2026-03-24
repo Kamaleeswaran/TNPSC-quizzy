@@ -1,0 +1,127 @@
+:root {
+    --yellow: #FFD600;
+    --skyblue: #00B4D8;
+    --dark: #03045E;
+}
+
+body {
+    margin: 0;
+    background: var(--dark);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Liquid Animation */
+.liquid-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(80px);
+    z-index: -1;
+    
+    /* ... previous styles ... */
+    background: var(--dark);
+    filter: blur(40px) contrast(20); /* High contrast + Blur = Liquid look */
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    animation: move 20s infinite alternate;
+}
+
+.yellow {
+    width: 400px;
+    height: 400px;
+    background: var(--yellow);
+    top: -100px;
+    left: -100px;
+}
+
+.skyblue {
+    width: 500px;
+    height: 500px;
+    background: var(--skyblue);
+    bottom: -150px;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+@keyframes move {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(50vw, 30vh) scale(1.5); }
+    
+}
+
+/* Glassmorphism UI */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.glow-btn {
+    background: var(--skyblue);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--skyblue);
+    transition: 0.3s;
+}
+
+.glow-btn:hover {
+    transform: scale(1.05);
+    background: var(--yellow);
+    box-shadow: 0 0 20px var(--yellow);
+}
+/* Add this to the .liquid-bg container */
+.liquid-bg {
+    /* ... previous styles ... */
+    background: var(--dark);
+    filter: blur(40px) contrast(20); /* High contrast + Blur = Liquid look */
+}
+
+/* Smooth Entrance for Quiz Options */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.opt {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid transparent;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.opt:hover {
+    background: var(--skyblue);
+    border-color: var(--yellow);
+    transform: scale(1.02);
+}
